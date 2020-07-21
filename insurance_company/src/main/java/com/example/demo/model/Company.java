@@ -108,7 +108,7 @@ public class Company implements Serializable {
 
 
 	//bi-directional many-to-many association to ServiceType
-	@ManyToMany(mappedBy="companies", fetch=FetchType.EAGER)
+	@ManyToMany(mappedBy="companies")
 	public List<ServiceType> getServiceTypes() {
 		return this.serviceTypes;
 	}

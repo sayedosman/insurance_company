@@ -15,14 +15,7 @@ class InsuranceCompanyApplicationTests {
 	private AdminRepository adminRepository;
 	@Test
 	void contextLoads() {
-		Admin a=new Admin();
-		a.setAddress("kljdfjlkf");
-		a.setEmail("fjkjfdkjk");
-		a.setFirstname("dfkjkjd");
-		a.setLastname("jkjkkj");
-		a.setPass("kjdfdjkfjk");
-		a.setPhone(77265858);
-		adminRepository.save(a);
+		
 	}
 
 }

@@ -2,6 +2,10 @@ package com.example.demo.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import java.util.List;
 
 
@@ -69,7 +73,7 @@ public class ServiceType implements Serializable {
 
 
 	//bi-directional many-to-many association to Company
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany
 	@JoinTable(
 		name="company_services"
 		, joinColumns={

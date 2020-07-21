@@ -16,7 +16,6 @@ public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String address;
-	private String email;
 	private String firstname;
 	private String gender;
 	private String lastname;
@@ -49,14 +48,6 @@ public class Employee implements Serializable {
 		this.address = address;
 	}
 
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	public String getFirstname() {
 		return this.firstname;
