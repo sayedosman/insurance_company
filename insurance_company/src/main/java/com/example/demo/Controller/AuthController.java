@@ -61,7 +61,7 @@ public class AuthController {
 	private AuthenticationManager authenticationManager;
     @PostMapping("/login")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public JWTResponse signup(@RequestParam("username")String username, @RequestParam("password")String password)  {
+    public JWTResponse signgin(@RequestParam("username")String username, @RequestParam("password")String password)  {
     	System.out.println(username);
     	
     	try {
@@ -71,28 +71,29 @@ public class AuthController {
     	    	User user=userService.getUserByUsername(username);
     	    	
     	    	String authenticationToken="";
+    	    	 String type="";
     	     if(user.getServiceProviderId()==0&&user.getCompanyId()==0) {
-    	    	 String type="admin";
+    	    	  type="admin";
     	    	 Admin admin=adminRepository.findById(user.getAdminId()).get();
     	    	  authenticationToken = tokenUtiles.generateToken(admin.getFirstname(),type);
     	    	 
     	     }
     	     if(user.getServiceProviderId()==0&&user.getAdminId()==0) {
     	    	
-    	    	 String type="company";
+    	    	  type="company";
     	    	 System.out.println(user.getCompanyId());
     	    	 Company company=companyRepository.findById(user.getCompanyId()).get();
     	    	 
     	    	 authenticationToken = tokenUtiles.generateToken(company.getName(),type);
     	     }
     	     if(user.getAdminId()==0&&user.getCompanyId()==0) {
-    	    	 String type="serviceProvider";
+    	    	  type="serviceProvider";
     	    	 ServiceProvider serviceprovider=serviceProviderRepository.findById(user.getServiceProviderId()).get();
     	    	 authenticationToken = tokenUtiles.generateToken(serviceprovider.getName(),type);
     	     }
     	        
     	        System.out.println(authenticationToken);
-    	        return new JWTResponse(authenticationToken, username);
+    	        return new JWTResponse(authenticationToken, username,type);
     	    
     	}catch (Exception e) {
     		System.out.println("dfhhdfhds");

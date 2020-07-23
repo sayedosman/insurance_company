@@ -20,12 +20,12 @@ public class Admin implements Serializable {
 	private String email;
 	private String firstname;
 	private String lastname;
-	private int phone;
+	private String phone;
 		public Admin() {
 	}
 
 
-	public Admin(long id, String address, String email, String firstname, String lastname, int phone) {
+	public Admin(long id, String address, String email, String firstname, String lastname, String phone) {
 			this.id = id;
 			this.address = address;
 			this.email = email;
@@ -82,11 +82,11 @@ public class Admin implements Serializable {
 
 	
 
-	public int getPhone() {
+	public String getPhone() {
 		return this.phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(int String) {
 		this.phone = phone;
 	}
 

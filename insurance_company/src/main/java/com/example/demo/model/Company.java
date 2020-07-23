@@ -16,7 +16,7 @@ public class Company implements Serializable {
 	private long id;
 	private String address;
 	private String name;
-	private int phone;
+	private String phone;
 	private List<Employee> employees;
 	private List<ServiceType> serviceTypes;
 
@@ -56,11 +56,11 @@ public class Company implements Serializable {
 	
 
 
-	public int getPhone() {
+	public String getPhone() {
 		return this.phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 

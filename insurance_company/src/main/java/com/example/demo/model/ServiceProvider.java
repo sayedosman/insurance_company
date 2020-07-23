@@ -17,7 +17,7 @@ public class ServiceProvider implements Serializable {
 	private long id;
 	private String address;
 	private String name;
-		private int phone;
+		private String phone;
 	private List<Invoice> invoices;
 	private ServiceType serviceType;
 
@@ -57,11 +57,11 @@ public class ServiceProvider implements Serializable {
 	
 
 
-	public int getPhone() {
+	public String getPhone() {
 		return this.phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
