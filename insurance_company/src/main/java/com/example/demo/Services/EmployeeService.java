@@ -1,12 +1,13 @@
-package com.example.demo.Repository;
+package com.example.demo.Services;
 
 import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Admin;
-@Repository
-public interface AdminRepository extends JpaRepository<Admin, Long> {
+import com.example.demo.model.Employee;
+@Service
+public class EmployeeService  {
 
-	public Admin findByFirstname(String firstname);
 }

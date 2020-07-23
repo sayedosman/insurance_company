@@ -20,10 +20,19 @@ public class Admin implements Serializable {
 	private String email;
 	private String firstname;
 	private String lastname;
-	private String pass;
 	private int phone;
 		public Admin() {
 	}
+
+
+	public Admin(long id, String address, String email, String firstname, String lastname, int phone) {
+			this.id = id;
+			this.address = address;
+			this.email = email;
+			this.firstname = firstname;
+			this.lastname = lastname;
+			this.phone = phone;
+		}
 
 
 	public long getId() {
@@ -71,14 +80,7 @@ public class Admin implements Serializable {
 	}
 
 
-	public String getPass() {
-		return this.pass;
-	}
-
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
-
+	
 
 	public int getPhone() {
 		return this.phone;

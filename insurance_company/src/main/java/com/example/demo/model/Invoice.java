@@ -14,7 +14,7 @@ import java.util.Date;
 @NamedQuery(name="Invoice.findAll", query="SELECT i FROM Invoice i")
 public class Invoice implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int id;
+	private long id;
 	private Date date;
 	private String image;
 	private Employee employee;
@@ -26,11 +26,11 @@ public class Invoice implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

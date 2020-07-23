@@ -14,7 +14,7 @@ import java.util.List;
 @NamedQuery(name="Employee.findAll", query="SELECT e FROM Employee e")
 public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int id;
+	private long id;
 	private String address;
 	private String firstname;
 	private String gender;
@@ -32,11 +32,11 @@ public class Employee implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

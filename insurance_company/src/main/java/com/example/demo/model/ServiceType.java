@@ -18,7 +18,7 @@ import java.util.List;
 @NamedQuery(name="ServiceType.findAll", query="SELECT s FROM ServiceType s")
 public class ServiceType implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int id;
+	private long id;
 	private String name;
 	private List<ServiceProvider> serviceProviders;
 	private List<Company> companies;
@@ -29,11 +29,11 @@ public class ServiceType implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

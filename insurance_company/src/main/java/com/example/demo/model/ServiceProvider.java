@@ -14,12 +14,10 @@ import java.util.List;
 @NamedQuery(name="ServiceProvider.findAll", query="SELECT s FROM ServiceProvider s")
 public class ServiceProvider implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int id;
+	private long id;
 	private String address;
 	private String name;
-	private String pass;
-	private int phone;
-	private String username;
+		private int phone;
 	private List<Invoice> invoices;
 	private ServiceType serviceType;
 
@@ -29,11 +27,11 @@ public class ServiceProvider implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -56,13 +54,7 @@ public class ServiceProvider implements Serializable {
 	}
 
 
-	public String getPass() {
-		return this.pass;
-	}
-
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
+	
 
 
 	public int getPhone() {
@@ -73,14 +65,6 @@ public class ServiceProvider implements Serializable {
 		this.phone = phone;
 	}
 
-
-	public String getUsername() {
-		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
 
 
 	//bi-directional many-to-one association to Invoice

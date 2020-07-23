@@ -13,12 +13,10 @@ import java.util.List;
 @Table(name="company")
 public class Company implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int id;
+	private long id;
 	private String address;
 	private String name;
-	private String pass;
 	private int phone;
-	private String username;
 	private List<Employee> employees;
 	private List<ServiceType> serviceTypes;
 
@@ -28,11 +26,11 @@ public class Company implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	public int getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -55,13 +53,7 @@ public class Company implements Serializable {
 	}
 
 
-	public String getPass() {
-		return this.pass;
-	}
-
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
+	
 
 
 	public int getPhone() {
@@ -71,16 +63,6 @@ public class Company implements Serializable {
 	public void setPhone(int phone) {
 		this.phone = phone;
 	}
-
-
-	public String getUsername() {
-		return this.username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
 
 	//bi-directional many-to-one association to Employee
 	@OneToMany(mappedBy="company", fetch=FetchType.EAGER)
